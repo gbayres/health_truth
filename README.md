@@ -1,4 +1,4 @@
-# HealthTruth
+
 Repositório de uma aplicação web produzida para o Hackathon Visagio com o intuito de identificar FakeNews.
 
 Acesse o aplicativo em: https://healthtruth.herokuapp.com/
@@ -22,3 +22,5 @@ Acesse o aplicativo em: https://healthtruth.herokuapp.com/
   <li>"aosFatos.py" pega as informações necessárias da base de dados do Aos Fatos fornecida pela Visagio.</li>
   <li>"factChecker.py" utiliza a API Fact Checker do Google para mais de 100 palavras-chave citadas nos títulos da base FakeHealthData.</li>
  </ul>
+
+<img style="width: 200px;" src="https://raw.githubusercontent.com/medcompunicamp/healthtruth/master/app/static/img/logo.svg" alt="HealthTruth">
