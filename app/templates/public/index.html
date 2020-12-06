@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>HealthTruth - É verdade, doutor?</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Gabriel, Giovanna, Juliano, Victor">
+        <meta name="description" content="Aplicação web para predizer e confirmar a veracidade de informações sobre saúde">
+        <meta name="keywords" content="fake news, saúde, medicina, hackathon, médicos, verdade">
+	<link rel="shortcut icon" href="">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </head>
+    <body class="clearfix">
+        <header class="clearfix">
+            <img class="logo" src="{{ url_for('static', filename='img/logo.svg') }}">
+            <div class="header-text">
+                <button id="btn-landscape" class="no-display-mobile">Fórum</button>
+                <h1>É verdade, doutor?</h1>
+                <p>Pergunte a um médico se uma mensagem é fake news! </p>
+            </div>
+        </header>
+        
+        <div class="nav-and-footer">
+            <nav class="landscape-navigator">
+                
+            </nav>
+            <nav class="main-navigator">
+                <button class="main-std-btn" id="btn-perguntar">Perguntar</button>
+                <button class="main-std-btn" id="btn-forum">Fórum</button>
+            </nav>
+            <footer>
+                <img class="logo-white" src="{{ url_for('static', filename='img/logo-white.svg') }}">
+                <img id="ecg" src="{{ url_for('static', filename='img/pcr.svg') }}">
+                <div id="sobrepor"></div>
+            </footer>
+        </div>
+        
+        <main>
+            <button class="main-std-btn" id="btn-menu">Menu</button>
+            <form class="form-pergunta" name="request_pergunta" method="POST" action="/">
+                <fieldset class="fieldset_style">
+                    <legend class="titulo_do_fieldset">Perguntar</legend>
+                    <p class="fieldset-label">Insira seus dados e pergunte</p>
+
+                    <input name="identifier" value="request_pergunta" type="hidden"> 
+
+                    <label for="nome">Nome</label>
+                    <input id="nome" type="text" name="nome" required maxlength="50">
+                    <label for="cidade">Cidade</label>
+                    <input id="cidade" type="text" name="cidade" required maxlength="50">
+                    <label for="estado">Estado</label>
+                    <input id="estado" type="text" name="estado" required maxlength="2">
+                    <label for="question">Pergunta</label>
+                    <input id="question" type="text" name="question" required maxlength="300" placeholder="Ex: Isso é verdade?">
+                    <label for="news">Notícia</label>
+                    <textarea class="news" name="news" rows="5" columns="33" required maxlength="5000" placeholder="Ex: Pandemia do corona vírus finalmente chega ao fim!"></textarea>
+                    <input name="nao_respondida" value="0" type="hidden">
+                    <input class="btn-responder" id="submeter" type="submit" value="Enviar"></submit>
+                </fieldset>
+            </form>
+
+        
+            <fieldset class="topic-list fieldset_style clearfix no-display-pc" id="fórum">
+                <legend class="titulo_do_fieldset">Fórum</legend>
+                <p class="fieldset-label">Selecione uma mensagem para responder</p>
+                
+                {% for i in range(csvRow|length) %}
+                    {% if i != 0 %}
+                    <label class="forum-message forum-msg-blue">
+                        <input class="radio-btn" type="radio" name="msg_selec" value="{{ i }}" onchange="mudar({{ i }})">
+                        <p>Notícia: {{ csvRow[i][5]}} </p>
+                        <p style="font-size: 3vh;">{{ csvRow[i][1] }}, {{ csvRow[i][2] }} - {{ csvRow[i][3] }} </p>
+                        <p style="margin-top: .5vh;">Pergunta: {{ csvRow[i][4]}} </p>
+                        <hr>
+                        <p style="text-align: center;">Última resposta</p>
+                            {% if csvRow[i][6] == "0" %}
+                                <p>Sem respostas ainda.</p>
+                                <p>Predição: {{ csvRow[i][7] }}</p>
+                            {% else %}
+                                {% set lista = csvRow[i][6].split("|-|") %}
+                                <p class="nome_do_individuo" style="margin-bottom: 0;">Dr(a). {{ lista[2] }}</p>
+                                <p style="font-size: 3vh;" class="infos" style="margin-top:0;">CRM: {{ lista[3] }} | Contato: {{ lista[6] }} | {{ lista[4] }} - {{ lista[5] }}</p>
+                                <p>{{ lista[7] }}</p>
+                                <p>Veredito: <span class="v-ou-f">{{ lista[8] }}</span></p>
+                            {% endif %}
+                    </label>
+                    {% endif %}
+                {% endfor %}
+                                  
+        
+                <button class="btn-responder" id="btn-responder-1" disabled="disabled" onclick="abrir_responder()">Responder</button>
+            </fieldset>
+            
+            <form class="form-pergunta no-display-pc no-display-mobile" id="form-resposta" name="request_resposta" method="POST" action="/">
+                <fieldset class="fieldset_style">
+                    <legend class="titulo_do_fieldset">Responder</legend>
+                    <p class="fieldset-label">Responda à pergunta selecionada</p>
+                    
+                    <input name="identifier" value="request_resposta" type="hidden"> 
+                    <input id="index_pergunta_selecionada" style="display: none;" name="index_pergunta_selecionada" value="" required>
+                    
+                    <label for="nome_md">Nome</label>
+                    <input id="nome_md" type="text" name="nome_md" required maxlength="50">
+                    <label for="crm_md">CRM</label>
+                    <input id="crm_md" type="text" name="crm_md" required maxlength="8">
+                    <label for="cidade_md">Cidade</label>
+                    <input id="cidade_md" type="text" name="cidade_md" required maxlength="50">
+                    <label for="UF_md">Estado</label>
+                    <input id="UF_md" type="text" name="UF_md" required maxlength="2">
+                    <label for="ctt_md">Contato</label>
+                    <input id="ctt_md" type="text" name="ctt_md" required maxlength="50">
+                    <label for="rp_md">Resposta</label>
+                    <textarea class="news" name="rp_md" rows="5" columns="33" required maxlength="5000" placeholder="Coloque aqui sua resposta."></textarea>
+                    <label for="veredito">Selecione o veredito</label>
+                    <select name="veredito" id="veredito">
+                        <option class="vdd-formatar" value="Verdadeiro">Verdadeiro</option>
+                        <option class="falso-formatar" value="Falso">Falso</option>
+                    </select>
+                    
+                    <button class="btn-responder" id="btn-voltar-forum" onclick="abrir_responder()">Voltar</button>
+                    <input type="submit" class="btn-responder" id="btn-responder-2" value="Responder"></input>
+                
+                </fieldset>
+            </form>
+
+        </main>
+        
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    </body>
+
+</html>

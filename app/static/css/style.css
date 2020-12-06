@@ -1,0 +1,513 @@
+* {
+    /* border: solid black 2px; */
+}
+
+html {
+    background: url("../img/bordaLateralEsquerda.svg");
+    background-repeat: no-repeat;
+    background-size: 50vw;
+    
+}
+
+.form_resposta{
+    /* display: none; */
+}
+
+.radio-btn{
+    display: none;
+}
+
+.infos{
+}
+
+
+.form_resposta input{
+    display: block;
+    background-color: #009cbb67;
+    border-radius: 3vh;
+    width: 80%;
+}
+
+.forum-msg-orange{
+    background-color: #bb4b0034;
+    border-top: solid .2vh #bb5400;
+    border-bottom: solid .2vh #bb3b00;
+    height: 40vh;
+    overflow: auto;
+}
+
+.forum-msg-blue{
+    background-color: #009cbb34;
+    border-top: solid .2vh #009bbb;
+    border-bottom: solid .2vh #009bbb;
+    height: 10vh;
+    overflow: hidden;
+}
+
+.letra-apagada{
+    color: gray;
+    font-size: 4vh;
+    font-variant: normal;
+
+}
+
+body{
+    margin: 0;
+    font-family: 'Open Sans', arial, helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.no-display-mobile{
+    display: none;
+}
+
+.clearfix::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.logo{
+    float: right;
+    margin-right: 10%;
+    margin-top: 5%;
+    /* width: 60%; */
+    height: 12vh;
+    max-width: 400px;
+    animation: piscar 1s linear infinite alternate;
+
+}
+
+.logo-white{
+    display: none;
+    width: 80%;
+    
+}
+
+header{
+    overflow: hidden;
+    height: 32vh;
+    transition: height .3s linear;
+}
+
+.header-closed{
+    height: 16vh;
+}
+
+.header-text{
+    font-style: italic;
+    color: #009bbb;
+    clear: right;
+    width: 90%;
+    box-sizing: border-box;
+    float: right;
+    text-align: center;
+    font-size: 2vh;
+
+}
+
+.header-text h1{
+    margin-bottom: 0;
+}
+
+.header-text p{
+    color: rgb(3, 71, 99);
+    padding: 0 10%;
+    margin-top: .5em;
+    margin-bottom: 0;
+    font-size: 2.5vh;
+}
+
+.main-navigator{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;  
+    overflow: hidden;
+    height: 35vh;
+    transition: height .3s linear;
+}
+
+.landscape-navigator{
+    display: none;
+}
+.main-std-btn{
+
+    border: solid black 0;
+    font-variant: small-caps;
+    width: 80%;
+    font-size: 5vh;
+    color: white;
+    background-color: #009bbb;
+    text-align: center;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    border-radius: 3vh 0 3vh 0;
+}
+
+footer{
+    display: fixed;
+    height: 34vh;
+    width: 100%;
+    background-color: #009bbb;
+    bottom: 0;
+    transition: height .3s linear;
+    position: relative;
+}
+
+#sobrepor{
+    width: 100%;
+    background:  #009bbb;
+    position: absolute;
+    top: 5vh;
+    height: 20vw;
+    animation: passar 2s;
+    animation-timing-function: cubic-bezier(.39,.68,.85,.27);
+    animation-iteration-count: infinite;
+}
+
+#ecg {
+    position: absolute;
+    width: 100%;
+    height: 20vw;
+    top: 5vh;
+}
+
+.nav-and-footer {
+    height: 68vh;
+    transition: height .3s linear;
+    overflow: hidden;
+}
+
+.close-nav-and-footer{
+    height: 0;
+}
+
+main {
+    height: 0vh;
+    transition: height .5s linear .5s;
+    overflow: hidden;
+}
+
+.main-opened {
+    height: 82vh;
+    overflow: auto;
+
+}
+
+.titulo_do_fieldset{
+    font-size: 8vw;
+    background-color: #009cbb49;
+    border-radius: 2vw;
+    margin-bottom: 1vw;
+    padding: 0 2vw;
+
+}
+
+#btn-menu {
+    width: 40%;
+    float: right;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    opacity: 0.75;
+    margin-right: 10%;
+    margin-top: 3%;
+}
+
+@keyframes passar{
+    0%{
+        transform: translateX(0%);
+    }
+
+    100%{
+        transform: translateX(100%);
+    }
+
+}
+
+@keyframes piscar{
+    0%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0.75;
+    }
+}
+
+.form-pergunta {
+    clear: both;
+    width: 80%;
+    margin: auto;
+    /* height: inherit; */
+    /* transition: height 1s linear; */
+    /* overflow: scroll; */
+    margin-top: 15vh;
+    /* background-color: blue; */
+}
+
+.fieldset_style{
+    box-sizing: border-box;
+    margin-bottom: 10vh;
+    border: solid 1vh #009bbb ;
+    font-size: 3vh;
+    color: #06677a;
+    text-align: center;
+    font-variant: small-caps;
+    border-radius: 3vh;
+}
+
+#form-resposta{
+    /* display: none; */
+    /* overflow: hidden;
+    height: 0;
+    transition: height 1s linear; */
+}
+
+.fieldset-label{
+    font-size: 3vh;
+}
+
+
+.form-pergunta select{
+    /* width: 60%; */
+    border: #009bbb .5vh solid;
+    /* border-radius: 5vh; */
+    background-color: white;
+    height: 10vh;
+    color: #009bbb;
+    font-variant: small-caps;
+    font-size: 5vh;
+    display: block;
+    margin: auto;
+    
+}
+
+
+.form-pergunta input[type="text"]{
+    height: 8vh;
+    display: block;
+    margin: auto;
+    width: 90%;
+    border-radius: 1vh;
+    border: solid #009bbb .3vh;
+    background-color: #009cbb67;
+    margin-bottom: 1em;
+    margin-top: .2em;
+}
+
+
+.topic-list{
+    padding: 0;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 15vh auto;
+    font-size: 4vh;
+}
+
+
+.forum-message{
+    display: block;
+    box-sizing: border-box;
+    /* max-height: 10vh; */
+    margin-bottom: 1vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    transition: padding-left .5s linear,
+                height .5s linear;
+    text-align: left;
+    
+}
+
+.forum-message:hover{
+    padding-left: 2vw;
+    cursor: pointer;
+    /* animation: blink-forum-message .7s linear infinite alternate; */
+}
+
+.btn-responder{
+    font-size: 4vh;
+    cursor: pointer;
+    background-color: #009cbb6e;
+    padding: 2vh 4vw;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 1vh;
+    color: #046b80;
+    font-variant: small-caps;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+}
+
+.btn-responder:hover{
+    animation: blink-ver-mais .7s linear infinite alternate;
+}
+
+@keyframes blink-forum-message{
+    0%{
+        background-color: #009cbb34;
+    }
+
+    100%{
+        background-color: #009cbb5e;
+    }
+}
+
+@keyframes blink-ver-mais{
+    0%{
+        background-color: #009cbb6e;
+    }
+    
+    100%{
+        background-color: #bb5a0034;
+    }
+
+}
+
+.news {
+    display: block;
+    margin: auto;
+    width: 90%;
+    border-radius: 1vh;
+    border: solid #009bbb .3vh;
+    background-color: #009cbb67;
+    margin-bottom: 1em;
+    margin-top: .2em;
+    height: 14vh;
+    resize: none;
+}
+
+#btn-responder-2{
+    margin-top: 3vh;
+}
+
+#submeter{
+    /* padding: 0; */
+
+}
+
+@media screen and (orientation:landscape) and (min-width: 500px){
+
+    .no-display-mobile{
+        display: initial;
+    }
+
+    header{
+        height: 0;
+        overflow: hidden;
+    }
+
+    
+    .header-text{
+        position: fixed;
+        bottom: 1vh;
+        left: 12vw;
+        width: 20%;
+    }
+
+    .header-text p{
+        font-size: 3vh;
+    }
+
+    footer{
+        position: fixed;
+        width: 20%;
+        right: 0;
+        height: 100vh;
+    }   
+    
+    .logo{
+        display: none;
+    }
+
+    .logo-white{
+        display: block;
+        margin: auto;
+        margin-top: 20vh;
+      
+    }
+
+    #sobrepor{
+        top: initial;
+        bottom: 15vh;
+        height: 10vh;
+    }
+
+    #ecg{
+        height: 10vh;
+        top: initial;
+        bottom: 15vh;
+    }
+
+
+    .main-navigator{
+        display: none;
+    }
+    
+
+    #btn-landscape{
+        display: block;
+        margin: auto;
+        width: 60%;
+        font-variant: small-caps;
+        font-size: 2vw;
+        color: white;
+        background-color: #009bbb;
+        border-radius: 3vh 0 3vh 0;
+        border: none;
+    }
+    
+    @keyframes blink-forum-button{
+        0%{
+            background-color: #009bbb;
+        }
+
+        100%{
+            background-color: #009cbb57;
+        }
+    }
+
+    #btn-landscape:hover{
+        cursor: pointer;
+        animation: blink-forum-button .7s linear infinite alternate;
+    }
+    
+    .nav-and-footer{
+        height: 13vh;
+    }
+
+    main {
+        overflow: scroll;
+        width: 45%;
+        height: 87vh;
+        margin-left: 32vw;
+    }
+
+    .titulo_do_fieldset{
+        font-size: 8vh;
+        border-radius: 2vh;
+        padding: 0 2vh;
+    
+    }
+
+    .form-pergunta{
+        margin-top: 2vh;
+        width: 100%;
+    }
+
+    #btn-menu{
+        display: none;
+    }
+
+    .topic-list{
+        width: 100%;
+        margin-top: 3.5vh;
+    }
+
+    .no-display-pc{
+        display: none;
+    }
+}
