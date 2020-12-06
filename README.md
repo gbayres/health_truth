@@ -1,5 +1,5 @@
 # HealthTruth
-Repositório de uma aplicação web produzida para o Hackathon Visagio.
+Repositório de uma aplicação web produzida para o Hackathon Visagio com o intuito de identificar FakeNews.
 
 Acesse o aplicativo em: https://healthtruth.herokuapp.com/
 
