@@ -12,7 +12,7 @@
   <li>Clique em "Enviar" para submeter a pergunta.</li>
   <li>Volte ao menu principal e clique em "Fórum".</li>
   <li>Selecione a pergunta que você submeteu.</li>
-  <li>Você irá perceber que um veredito foi dado, que será um "placeholder" até uma resposta médica definitiva.</li>
+  <li>Você irá perceber que uma predição foi dada, que será um "placeholder" até uma resposta médica definitiva.</li>
   <li>Clique em responder.</li>
   <li>Insira os dados de um médico fictício e responda à pergunta.</li>
   <li>Selecione um veredito e submeta.</li>
