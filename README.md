@@ -5,11 +5,12 @@
 <p>O aplicativo consiste em um fórum em que pacientes podem tirar dúvidas com médicos quanto à veracidade de informações. Enquanto aguardam a resposta de um médico, um algoritmo de inteligência artificial prediz a veracidade. Logo que um médico responder, a predição é substituida por um veredito.</p>
 <p>Seguem alguns links para auxiliar na melhor compreensão da ideia: </p>
 <ul>
-  <li>Link do aplicativo: https://healthtruth.herokuapp.com/</li>
+  <li>Link do aplicativo (dynos podem estar desativados): https://healthtruth.herokuapp.com/</li>
   <li>PDF explicativo: https://drive.google.com/file/d/1oGwvAnjhUfaU3rHSAHvCjAEKKJX2olUo/view?usp=sharing</li>
   <li>Pitch: https://www.youtube.com/embed/e5lj4ZXdcLE</li>
-<p>Acesse o aplicativo em: </p>
 </ul>
+<h2>Agradecimentos iniciais</h2>
+  <p>Agradeço aos demais membros da equipe - Giovanna Gennari, Juliano Amadeu e Vitor Motta dos Santos - por me auxiliarem na criação do PDF e no planejamento do pitch.</p>
 <h2>Explicação do funcionamento</h2>
   <h3>No celular</h3>
   <ol>
