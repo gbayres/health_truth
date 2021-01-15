@@ -7,7 +7,7 @@
 <ul>
   <li>Link do aplicativo (dynos podem estar desativados): https://healthtruth.herokuapp.com/</li>
   <li>PDF explicativo: https://drive.google.com/file/d/1oGwvAnjhUfaU3rHSAHvCjAEKKJX2olUo/view?usp=sharing</li>
-  <li>Pitch: https://www.youtube.com/embed/e5lj4ZXdcLE</li>
+  <li>Pitch: https://www.youtube.com/watch?v=e5lj4ZXdcLE</li>
 </ul>
 <h2>Agradecimentos iniciais</h2>
   <p>Agradeço aos demais membros da equipe - Giovanna Gennari, Juliano Amadeu e Vitor Motta dos Santos - por auxiliarem em alguns pontos da criação do PDF e no planejamento do pitch.</p>
