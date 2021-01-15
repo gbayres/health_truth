@@ -10,7 +10,7 @@
   <li>Pitch: https://www.youtube.com/embed/e5lj4ZXdcLE</li>
 </ul>
 <h2>Agradecimentos iniciais</h2>
-  <p>Agradeço aos demais membros da equipe - Giovanna Gennari, Juliano Amadeu e Vitor Motta dos Santos - por me auxiliarem na criação do PDF e no planejamento do pitch.</p>
+  <p>Agradeço aos demais membros da equipe - Giovanna Gennari, Juliano Amadeu e Vitor Motta dos Santos - por auxiliarem em alguns pontos da criação do PDF e no planejamento do pitch.</p>
 <h2>Explicação do funcionamento</h2>
   <h3>No celular</h3>
   <ol>
