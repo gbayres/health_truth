@@ -7,7 +7,7 @@
 <ul>
   <li>Link do aplicativo: https://healthtruth.herokuapp.com/</li>
   <li>PDF explicativo: https://drive.google.com/file/d/1oGwvAnjhUfaU3rHSAHvCjAEKKJX2olUo/view?usp=sharing</li>
-  <li>Pitch: <iframe width="560" height="315" src="https://www.youtube.com/embed/e5lj4ZXdcLE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+  <li>Pitch: https://www.youtube.com/embed/e5lj4ZXdcLE</li>
 <p>Acesse o aplicativo em: </p>
 </ul>
 <h2>Explicação do funcionamento</h2>
